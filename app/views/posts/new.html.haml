@@ -1,0 +1,15 @@
+%h1 Posts
+
+%h2 Create new post
+%p 
+ = form_for(@post) do |f|
+  %content 
+   = f.label 'Title: '
+   = f.text_field	:title
+   %br
+  %content 
+   = f.label 'Body: '
+   = f.text_area	:body
+   %br
+  %content
+   = f.submit		'Create'

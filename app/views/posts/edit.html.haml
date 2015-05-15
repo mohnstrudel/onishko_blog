@@ -1,0 +1,10 @@
+%h1 Edit 
+
+=form_for @post do |f|
+ %h3
+  =f.label 'Title: '
+  =f.text_field :title
+ %h3
+  =f.label 'Body: '
+  =f.text_area :body
+ %p=f.submit 'Save changes'
