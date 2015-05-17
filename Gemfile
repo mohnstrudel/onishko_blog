@@ -14,6 +14,12 @@ end
 #Gems for the frontend
 gem 'haml-rails'
 
+#Image uploading
+gem 'carrierwave'
+gem 'rmagick'
+
+#Testing
+gem 'rspec-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

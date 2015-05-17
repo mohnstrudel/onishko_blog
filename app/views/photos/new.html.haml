@@ -1,0 +1,13 @@
+%h1 Upload new photo
+
+=form_for @photo, :html => {:multipart => true} do |f|
+ %p
+  =f.label 'Photo title:'
+  =f.text_field :title
+ %p
+  =f.label 'Choose file:'
+  =f.file_field :image
+ %p
+  =f.label :remote_image_url, "or image URL:"
+  =f.text_field :remote_image_url
+ %p=f.submit

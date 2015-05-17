@@ -1,0 +1,17 @@
+!!!
+%html
+%head
+ %title=FancyBlog
+ = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+ = javascript_include_tag 'application', 'data-turbolinks-track' => true
+ = csrf_meta_tags
+
+%body
+
+ %p
+  %ul
+   %li=link_to 'Posts', posts_path
+   %li=link_to 'Photos', photos_path
+   %li=link_to 'Shop', '#'
+   %li=link_to 'About me', about_path
+ = yield

@@ -1,0 +1,7 @@
+%h1 Template
+
+=@photos.each do |photo|
+ %p=photo.title
+ %p=image_tag photo.image_url(:thumb)
+
+%p=link_to 'Upload new', new_photo_path
