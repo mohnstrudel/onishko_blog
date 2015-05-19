@@ -3,7 +3,7 @@
   %h1.blog-title Listing all posts
   %p=link_to 'Create new post', new_post_path, class: 'btn btn-success'
 
- =@posts.each do |post|
+ -@posts.each do |post|
   .row
    .col-sm-8.blog-main
     .blog-post

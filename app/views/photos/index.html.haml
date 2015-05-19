@@ -1,7 +1,8 @@
 %h1 Template
+%p=link_to 'Upload new', new_photo_path, class: 'btn btn-info'
 
-=@photos.each do |photo|
- %p=photo.title
- %p=image_tag photo.image_url(:thumb)
+.container
+ %ul.row.list-group
+  -@photos.each do |photo|
+   %li.list-group-item.col-md-4.col-sm-6.col-xs-12=image_tag photo.image_url(:thumb_medium)
 
-%p=link_to 'Upload new', new_photo_path
