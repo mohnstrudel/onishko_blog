@@ -3,14 +3,20 @@
 %h2 Create new post
 %p 
  = form_for(@post) do |f|
-  .form-group
-   = f.label 'Title: ', class: 'col-sm-2 control-label'
-   .col-sm-10
-    = f.text_field	:title, class: 'form-control'
+  .form-horizontal
+   .form-group
+    = f.label 'Title: ', class: 'col-sm-2 control-label'
+    .col-sm-10
+     = f.text_field	:title, class: 'form-control'
 
-  .form-group
-   = f.label 'Body: ', class: 'col-sm-2 control-label'
-   .col-sm-10
-    = f.text_area	:body, class: 'form-control'
-  %content
-   = f.submit		'Create', class: 'btn btn-success'
+   .form-group
+    = f.label 'Category: ', class: 'col-sm-2 control-label'
+    .col-sm-10
+     = f.collection_select :category_id, Category.all, :id, :name, { prompt: 'Please select category' }, { :class => 'form-control' }
+
+   .form-group
+    = f.label 'Body: ', class: 'col-sm-2 control-label'
+    .col-sm-10
+     = f.text_area	:body, class: 'form-control'
+   %content
+    = f.submit		'Create', class: 'btn btn-success'
