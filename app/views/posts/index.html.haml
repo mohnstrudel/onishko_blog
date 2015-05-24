@@ -1,13 +1,13 @@
 .container
  .blog-header
-  %h1.blog-title Listing all posts
+  %h1.blog-title Latest posts
   %p=link_to 'Create new post', new_post_path, class: 'btn btn-success'
 
  -@posts.each do |post|
   .row
    .col-sm-8.blog-main
     .blog-post
-     %h2.blog-post-title=post.title 
+     %h2.blog-post-title=link_to post.title, post
      %p.blog-post-meta=post.body
      %p
       .btn-group{role: 'group'}

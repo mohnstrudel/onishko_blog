@@ -1,8 +1,13 @@
-%h1 Template
+%h1 All my photos
 %p=link_to 'Upload new', new_photo_path, class: 'btn btn-info'
 
 .container
- %ul.row.list-group
+ .row
   -@photos.each do |photo|
-   %li.list-group-item.col-md-4.col-sm-6.col-xs-12=image_tag photo.image_url(:thumb_medium)
+   .col-md-4.col-sm-6.col-xs-12
+    =image_tag photo.image_url(:thumb_medium), class: 'thumbnail'
+    .caption
+     %h3=photo.title
+     %p Description goes in here
+     %p=link_to 'Delete', photo_path(photo.id), method: :delete, class: 'btn btn-danger'
 
