@@ -2,3 +2,12 @@
 
 %p=@post.body
 %p=link_to 'Edit', edit_post_path
+
+%p
+ %h2
+  = @post.comments.count
+  Comments
+=render @post.comments
+
+%h3 Add a comment:
+=render 'comments/form'

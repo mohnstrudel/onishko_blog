@@ -2,7 +2,10 @@ Rails.application.routes.draw do
  
  root 'posts#index'
 
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
+  
   resources :photos
 
   match '/about', to: 'static_pages#about', via: 'get'
