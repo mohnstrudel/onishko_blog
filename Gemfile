@@ -11,6 +11,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'devise'
+
 #Gems for the frontend
 gem 'haml-rails'
 

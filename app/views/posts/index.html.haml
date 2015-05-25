@@ -11,7 +11,8 @@
      %p.blog-post-meta=post.body
      %p
       Posted #{time_ago_in_words(post.created_at)} ago | #{post.comments.count} Comments
-     %p
-      .btn-group{role: 'group'}
-      =link_to 'Edit', edit_post_path(post.id), class: 'btn btn-warning' 
-      =link_to 'Delete', post_path(post.id), method: :delete, class: 'btn btn-danger'
+     =if user_signed_in?
+      %p
+       .btn-group{role: 'group'}
+       =link_to 'Edit', edit_post_path(post.id), class: 'btn btn-warning' 
+       =link_to 'Delete', post_path(post.id), method: :delete, class: 'btn btn-danger'

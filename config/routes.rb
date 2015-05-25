@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
  
- root 'posts#index'
+  devise_for :users
+
+  devise_scope :user do
+    get "login", to: "devise/sessions#new"
+    get "signup", to: "devise/registrations#new"
+  end
+  
+  
+  root 'posts#index'
 
   resources :posts do
     resources :comments
