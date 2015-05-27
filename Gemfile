@@ -14,7 +14,7 @@ group :production do
   gem 'pg'
 end
 
-gem 'devise', '~> 3.5.1'
+gem 'devise'
 
 #Gems for the frontend
 gem 'haml-rails'
